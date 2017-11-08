@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E0BB3611FB2D6B80029A896 /* Reverso-Traduction-en-Contexte.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E0BB3601FB2D6B70029A896 /* Reverso-Traduction-en-Contexte.png */; };
 		7EA889701FAA3F010055CEEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA8896F1FAA3F010055CEEC /* AppDelegate.swift */; };
 		7EA889721FAA3F010055CEEC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA889711FAA3F010055CEEC /* ViewController.swift */; };
 		7EA889751FAA3F010055CEEC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EA889731FAA3F010055CEEC /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7E0BB3601FB2D6B70029A896 /* Reverso-Traduction-en-Contexte.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Reverso-Traduction-en-Contexte.png"; sourceTree = "<group>"; };
 		7EA8896C1FAA3F010055CEEC /* testnamesbyalphabet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testnamesbyalphabet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EA8896F1FAA3F010055CEEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7EA889711FAA3F010055CEEC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -35,6 +37,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7E0BB35F1FB2D67E0029A896 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				7E0BB3601FB2D6B70029A896 /* Reverso-Traduction-en-Contexte.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
 		7EA889631FAA3F010055CEEC = {
 			isa = PBXGroup;
 			children = (
@@ -54,6 +64,7 @@
 		7EA8896E1FAA3F010055CEEC /* testnamesbyalphabet */ = {
 			isa = PBXGroup;
 			children = (
+				7E0BB35F1FB2D67E0029A896 /* images */,
 				7EA8896F1FAA3F010055CEEC /* AppDelegate.swift */,
 				7EA889711FAA3F010055CEEC /* ViewController.swift */,
 				7EA889731FAA3F010055CEEC /* Main.storyboard */,
@@ -123,6 +134,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E0BB3611FB2D6B80029A896 /* Reverso-Traduction-en-Contexte.png in Resources */,
 				7EA8897A1FAA3F010055CEEC /* LaunchScreen.storyboard in Resources */,
 				7EA889771FAA3F010055CEEC /* Assets.xcassets in Resources */,
 				7EA889751FAA3F010055CEEC /* Main.storyboard in Resources */,

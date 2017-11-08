@@ -9,8 +9,8 @@
 import UIKit
 
 class ViewController: UIViewController {
-    @IBOutlet weak var textField: UITextField!
-    @IBOutlet weak var textView: UITextView!
+   
+    @IBOutlet weak var textfield: UITextField!
     
     var resultToDisplay:String = ""
     var arrOfNames = ["Armand","Bart","Annie","Caro","Alain","Brad"]
@@ -32,17 +32,7 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func search(_ sender: UITextField) {
-        resultToDisplay = ""
-                for i in namesByAlphabet {
-                    if textField.text == String(namesByAlphabet.keys){
-                        print("ok")
-                    }
-                    
-            
-            
-        }
-        
+    @IBAction func traduire(_ sender: UIButton) {
     }
     
 }
