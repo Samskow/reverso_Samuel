@@ -9,15 +9,15 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Add View Controller-->
         <scene sceneID="yEm-e3-23I">
             <objects>
-                <viewController id="Vni-By-T9x" customClass="ViewController" customModule="testnamesbyalphabet" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Vni-By-T9x" customClass="AddViewController" customModule="testnamesbyalphabet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Kqm-ZQ-iVL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A8U-N7-fdf">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Francais" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A8U-N7-fdf">
                                 <rect key="frame" x="31" y="161" width="119" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
@@ -38,8 +38,11 @@
                                 <state key="normal" title="AJOUTER">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="Ajouter:" destination="Vni-By-T9x" eventType="touchUpInside" id="VAf-ot-65a"/>
+                                </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fJr-xH-6A4">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Anglais" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fJr-xH-6A4">
                                 <rect key="frame" x="219" y="161" width="119" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
@@ -51,8 +54,8 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
-                                    <outlet property="dataSource" destination="Vni-By-T9x" id="Zp4-cD-h0h"/>
-                                    <outlet property="delegate" destination="Vni-By-T9x" id="SW3-Lu-YdV"/>
+                                    <outlet property="dataSource" destination="Vni-By-T9x" id="NLv-tJ-ObK"/>
+                                    <outlet property="delegate" destination="Vni-By-T9x" id="wHK-Dl-es8"/>
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="=" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PMe-Be-gpR">
@@ -82,9 +85,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="more" id="ZIz-Zm-UCI"/>
                     <connections>
-                        <outlet property="addTextfieldAnglais" destination="fJr-xH-6A4" id="vFh-ji-Wf7"/>
-                        <outlet property="addTextfieldFrancais" destination="A8U-N7-fdf" id="7Ql-Ui-Kqc"/>
-                        <outlet property="tableViewAdd" destination="L10-5r-0uw" id="oed-HH-Tq4"/>
+                        <outlet property="addTableView" destination="L10-5r-0uw" id="GkJ-KS-dZz"/>
+                        <outlet property="texfieldFrancais" destination="A8U-N7-fdf" id="fUc-Ye-7oG"/>
+                        <outlet property="textfieldAnglais" destination="fJr-xH-6A4" id="yqp-33-2cD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cF8-OA-74f" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -182,6 +185,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="search" id="KY2-2e-3o0"/>
                     <connections>
+                        <outlet property="Resultat" destination="BpM-Wd-8N0" id="L9q-dG-fmT"/>
                         <outlet property="tableViewHome" destination="gXa-K0-7CV" id="Yvg-f6-kkx"/>
                         <outlet property="textfield" destination="yaa-N2-NKu" id="PIe-mH-LNm"/>
                     </connections>
