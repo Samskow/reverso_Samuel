@@ -164,33 +164,37 @@
                                     <segment title="Anglais"/>
                                 </segments>
                                 <color key="tintColor" red="0.14456251263618469" green="0.64369410276412964" blue="0.99673467874526978" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="choixDeLangue:" destination="iLs-tZ-TrD" eventType="valueChanged" id="ZMP-dn-aGR"/>
+                                </connections>
                             </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Resultat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BpM-Wd-8N0">
+                                <rect key="frame" x="113" y="223" width="149" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="textColor" red="0.14456251263618469" green="0.64369410276412964" blue="0.99673467874526978" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yaa-N2-NKu">
-                                <rect key="frame" x="128" y="124" width="119" height="30"/>
+                                <rect key="frame" x="128" y="127" width="119" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <action selector="controleDuTextField:" destination="iLs-tZ-TrD" eventType="editingChanged" id="Tg4-t8-bva"/>
+                                    <outlet property="delegate" destination="iLs-tZ-TrD" id="e0v-aZ-xRT"/>
                                 </connections>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Resultat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BpM-Wd-8N0">
-                                <rect key="frame" x="147" y="228" width="81" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="2aD-3y-r8N"/>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="search" id="KY2-2e-3o0"/>
                     <connections>
-                        <outlet property="Resultat" destination="BpM-Wd-8N0" id="L9q-dG-fmT"/>
-                        <outlet property="tableViewHome" destination="gXa-K0-7CV" id="Yvg-f6-kkx"/>
-                        <outlet property="textfield" destination="yaa-N2-NKu" id="PIe-mH-LNm"/>
+                        <outlet property="resultat" destination="BpM-Wd-8N0" id="T9O-eN-jYf"/>
+                        <outlet property="tableViewHome" destination="gXa-K0-7CV" id="CYM-Qj-Aq3"/>
+                        <outlet property="textfield" destination="yaa-N2-NKu" id="fx7-k6-aIc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HBV-5y-VXZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
