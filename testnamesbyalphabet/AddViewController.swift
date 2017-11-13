@@ -10,13 +10,13 @@ import Foundation
 
 import UIKit
 
-class AddViewController: UIViewController,UITableViewDelegate,UITableViewDataSource{
+class AddViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate{
     
     
     @IBOutlet weak var addTableView: UITableView!
     @IBOutlet weak var texfieldFrancais: UITextField!
     @IBOutlet weak var textfieldAnglais: UITextField!
-    var dictFrAn = ["chat":"cat","chien":"dog"]
+    var addDictFrAn = ["chat":"cat","chien":"dog"]
     var theKey = ""
     var theValue = ""
     
@@ -34,7 +34,7 @@ class AddViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
         // Dispose of any resources that can be recreated.
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dictFrAn.count
+        return addDictFrAn.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -50,10 +50,13 @@ class AddViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
         
         return cell
     }
-    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
    
     @IBAction func Ajouter(_ sender: UIButton) {
-        dictFrAn = [texfieldFrancais.text!:textfieldAnglais.text!]
+        addDictFrAn = [texfieldFrancais.text!:textfieldAnglais.text!]
         addTableView.reloadData()
     }
     

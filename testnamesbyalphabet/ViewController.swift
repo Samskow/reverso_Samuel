@@ -7,35 +7,32 @@
 //
 
 import UIKit
+import Foundation
+import UIKit
 
 class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate{
-    
     
     
     @IBOutlet weak var textfield: UITextField!
     @IBOutlet weak var tableViewHome: UITableView!
     @IBOutlet weak var resultat: UILabel!
     
-    var resultToDisplay:String = ""
-    
-    
-    var namesByAlphabet: [String.Element:[String]]!
-    
     
     var theKey = String()
     var theValue = String()
     var listElementCorrespondants = [String]()
-    var dictFrAn = ["chat":"cat","chien":"dog","loup":"wolf","ours":"bear","tigre":"tiger","perroquet":"parrot","canard":"duck"]
-    var tabMotsFr = ["chat","chien","loup","ours","tigre","perroquet"]
-    var tabMotsAn = ["cat","dog","wolf","bear","tiger","parrot"]
+    var tabMotsFr = ["chat","chien","loup","ours","tigre","perroquet","crabe","loutre"]
+    var tabMotsAn = ["cat","dog","wolf","bear","tiger","parrot","crab","otter"]
+    var dictFrAn = ["chat":"cat","chien":"dog","loup":"wolf","ours":"bear","tigre":"tiger","perroquet":"parrot","canard":"duck","crabe":"crab","loutre":"otter"]
     
     override func viewDidLoad() {
         //        namesByAlphabet = Dictionary(grouping:arrOfNames,by:{$0.first!})
         
-        
+        tableViewHome.reloadData()
         textfield.placeholder = "Mot en français"
-        super.viewDidLoad()
+        
         // Do any additional setup after loading the view, typically from a nib.
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -45,7 +42,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     //-----------------------------------------------
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return listElementCorrespondants.count
+        return (listElementCorrespondants.count)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -64,7 +61,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
             tableViewHome.reloadData()
             dictFrAn = Dictionary(uniqueKeysWithValues: zip(tabMotsFr,tabMotsAn))
             resultat.text = "Resultat"
-            
+
         case 1:
             textfield.text = ""
             textfield.placeholder = "Mot en anglais"
@@ -75,8 +72,8 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         default:
             break
         }
-        
-        
+
+
     }
     
     
@@ -111,9 +108,11 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
                 tableViewHome.reloadData()
             }
             else if textfield.text == "" {
-                
+
                 listElementCorrespondants = [String]()
                 tableViewHome.reloadData()
+
+
             }
             
         }
@@ -124,25 +123,24 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     
     // pour recuperer un element selectionner
     
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+         print("dictionnaire afficher", [String](listElementCorrespondants)[indexPath.row])
+        textfield.text = [String](listElementCorrespondants)[indexPath.row]
         
-        textfield.text = [String](dictFrAn.keys)[indexPath.row]
-        print("dictionnaire afficher", [String](dictFrAn.keys)[indexPath.row])
         
     }
     
-    //    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-    //        textField.resignFirstResponder()
-    //        return true
-    //    }
-    
-    //    let TEXT_FIELD_LIMIT = 1
-    //    func textField(_ _textFiel: UITextField,shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool{
-    //
-    //        return(textfield.text?.utf16.count ?? 0) + string.utf16.count - range.length <= TEXT_FIELD_LIMIT
-    //    }
+        func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+            textField.resignFirstResponder()
+            return true
+        }
+
+        let TEXT_FIELD_LIMIT = 1
+        func textField(_ _textFiel: UITextField,shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool{
+
+            return(textfield.text?.utf16.count ?? 0) + string.utf16.count - range.length <= TEXT_FIELD_LIMIT
+        }
     
     
     
@@ -156,9 +154,8 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     
     // quand on clique sur anglais on echange les key et value
     
+    // probleme quand on veux recuperer l'index
     
-    
-    
-    
+
 }
 
