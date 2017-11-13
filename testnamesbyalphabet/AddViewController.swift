@@ -58,6 +58,7 @@ class AddViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
     @IBAction func Ajouter(_ sender: UIButton) {
         addDictFrAn = [texfieldFrancais.text!:textfieldAnglais.text!]
         addTableView.reloadData()
+        //let dict:[String:String] = ["key":"Hello"] UserDefaults.standard.set(dict, forKey: "dict") let result = UserDefaults.standard.value(forKey: "dict") print(result!) // Output -> { key:hello;}  // à tester
     }
     
     
