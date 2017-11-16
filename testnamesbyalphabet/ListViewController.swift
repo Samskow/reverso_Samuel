@@ -38,6 +38,9 @@ class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     override func viewDidLoad() {
         manageUser()
+       
+        
+        
          
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -52,6 +55,7 @@ class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         print("reload")
         super.viewWillAppear(animated)
         manageUser()
+        listTableView.reloadData()
     }
     
     func manageUser() {
