@@ -20,15 +20,17 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     
     @IBOutlet weak var traduire: UIButton!
     
+    
     var theKey = String()
     var theValue = String()
     var listElementCorrespondants = [String]()
     var tabMotsFr = ["chat🐱","chien🐶","loup🐺","ours🐻","tigre🐯","souris🐭 ","crabe🦀","grenouille🐸","abeille🐝","lapin🐰","écureuil🐿"]
     var tabMotsAn = ["cat🐱","dog🐶","wolf🐺","bear🐻","tiger🐯","mouse🐭","crab🦀","frog🐸","bee🐝","rabbit🐰","squirrel🐿"]
+    
     var dictFrAn = [String:String]()
     
     override func viewDidLoad() {
-        print("OKKK")
+        
         manageUser()
         dictFrAn = Dictionary(uniqueKeysWithValues: zip(tabMotsFr,tabMotsAn)) // par defaut c'est des mots français
         tableViewHome.reloadData()
@@ -43,7 +45,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     
     //---------------------test
     override func viewWillAppear(_ animated: Bool) {
-        print("reload")
+       
         super.viewWillAppear(animated)
         choisirLangue()
     }
@@ -54,16 +56,12 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         if UserDefaults.standard.object(forKey: "french") != nil{ // si la key object existe on lui donne ses valeurs
             tabMotsFr = UserDefaults.standard.object(forKey: "french") as! [String]
             tabMotsAn = UserDefaults.standard.object(forKey: "english") as! [String]
-            print("il y a deja des valeurs attribuées")
-            print("mot fr :",tabMotsFr)
-            print("mot an :",tabMotsAn)
-            print(dictFrAn)
+          
             
         }else{ // valeurs par défaut
             tabMotsFr = ["chat🐱","chien🐶","loup🐺","ours🐻","tigre🐯","souris🐭 ","crabe🦀","grenouille🐸","abeille🐝","lapin🐰","écureuil🐿"]//mots d'origine
             tabMotsAn = ["cat🐱","dog🐶","wolf🐺","bear🐻","tiger🐯","mouse🐭","crab🦀","frog🐸","bee🐝","rabbit🐰","squirrel🐿"]//mots d'origine
-            print("il y a pas de valeurs attribuées mais on initialise avec des mots de base")
-            print(tabMotsFr)
+            
         }
         
         
@@ -132,13 +130,11 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     @IBAction func controleDuTextField(_ sender: UITextField) {
         manageUser()
         let premiereLettre = ((textfield.text!).characters.first?.description ?? "")
-        print(premiereLettre)
         listElementCorrespondants = [String]()
         
         for (keys,_) in dictFrAn {
             
             if premiereLettre.uppercased() == (keys.characters.first?.description ?? "").uppercased(){
-                print(keys,"commence par",premiereLettre)
                 listElementCorrespondants.append(keys)
                 //sauvegarder
                 tableViewHome.reloadData()
@@ -146,24 +142,24 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
             else if textfield.text == "" {
                 resultat.text = "Resultat"
                 listElementCorrespondants = ["Aucun résultat "]
-               
                 tableViewHome.reloadData()
                 
                 
             }
             
         }
-        print("tab est ",listElementCorrespondants)
-        
-        
+       
     }
     
     // pour recuperer un element selectionner
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        print("dictionnaire afficher", [String](listElementCorrespondants)[indexPath.row])
         textfield.text = [String](listElementCorrespondants)[indexPath.row]
+        
+        let selectedCell:UITableViewCell = tableView.cellForRow(at: indexPath)!
+        selectedCell.contentView.backgroundColor = UIColor.init(red: 37/255, green: 164/255, blue: 254/255, alpha: 1.0)
+        
         
         
     }

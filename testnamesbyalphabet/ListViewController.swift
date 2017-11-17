@@ -14,7 +14,7 @@ class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     var tabMotsFr = ["chat🐱","chien🐶","loup🐺","ours🐻","tigre🐯","souris🐭 ","crabe🦀","grenouille🐸","abeille🐝","lapin🐰","écureuil🐿"]//mots d'origine
     var tabMotsAn = ["cat🐱","dog🐶","wolf🐺","bear🐻","tiger🐯","mouse🐭","crab🦀","frog🐸","bee🐝","rabbit🐰","squirrel🐿"]//mots d'origine
-    
+   
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return(tabMotsFr.count)
     }
@@ -52,7 +52,6 @@ class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     }
     //-------------Pour actualiser la tab bar controller ----------
     override func viewWillAppear(_ animated: Bool) {
-        print("reload")
         super.viewWillAppear(animated)
         manageUser()
         listTableView.reloadData()
@@ -66,12 +65,22 @@ class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         }else{ // valeurs par défaut
             tabMotsFr = ["chat🐱","chien🐶","loup🐺","ours🐻","tigre🐯","souris🐭 ","crabe🦀","grenouille🐸","abeille🐝","lapin🐰","écureuil🐿"]
             tabMotsAn = ["cat🐱","dog🐶","wolf🐺","bear🐻","tiger🐯","mouse🐭","crab🦀","frog🐸","bee🐝","rabbit🐰","squirrel🐿"]
-            print("il y a pas de valeurs attribuées mais on initialise avec des mots de base")
+            
+            
         }
         
         
     }
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        
+        let selectedCell:UITableViewCell = tableView.cellForRow(at: indexPath)!
+        selectedCell.contentView.backgroundColor = UIColor.init(red: 37/255, green: 164/255, blue: 254/255, alpha: 1.0)
+        
+        
+        
+        
+    }
   
     
     

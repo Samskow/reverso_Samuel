@@ -25,18 +25,32 @@
                                     <constraint firstAttribute="width" constant="300" id="UUM-v3-cOe"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" alpha="0.94999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VYj-L4-1Qw">
+                                <rect key="frame" x="120.5" y="371" width="134" height="30"/>
+                                <color key="backgroundColor" red="0.20303905010223389" green="0.37985074520111084" blue="0.59158426523208618" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="134" id="OKW-4P-XDM"/>
+                                    <constraint firstAttribute="height" constant="30" id="zcI-ky-6Pb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <state key="normal" title="ANIMAUX">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ZsM-7a-2qK" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="1GH-A1-xMd"/>
                             <constraint firstItem="ZsM-7a-2qK" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="6mo-aT-bc3"/>
+                            <constraint firstItem="VYj-L4-1Qw" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="7sn-es-XZ7"/>
+                            <constraint firstItem="VYj-L4-1Qw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="351" id="FHh-mb-6d9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
     <resources>

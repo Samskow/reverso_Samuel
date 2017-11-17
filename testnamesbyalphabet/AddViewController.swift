@@ -18,6 +18,7 @@ class AddViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
     @IBOutlet weak var textfieldAnglais: UITextField!
     var tabMotsFr = ["chat🐱","chien🐶","loup🐺","ours🐻","tigre🐯","souris🐭 ","crabe🦀","grenouille🐸","abeille🐝","lapin🐰","écureuil🐿"]
     var tabMotsAn = ["cat🐱","dog🐶","wolf🐺","bear🐻","tiger🐯","mouse🐭","crab🦀","frog🐸","bee🐝","rabbit🐰","squirrel🐿"]
+    
     var dictFrAn = [String:String]()
     var theKey = ""
     var theValue = ""
@@ -38,7 +39,6 @@ class AddViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
     }
     //---------------------test
     override func viewWillAppear(_ animated: Bool) {
-        print("reload")
         super.viewWillAppear(animated)
         manageUser()
     }
@@ -50,10 +50,6 @@ class AddViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.default,reuseIdentifier: nil)
-        
-        
-        
-        print("la liste est",addlistElementCorrespondants)
         cell.textLabel?.text = addlistElementCorrespondants[indexPath.row]
         return cell
     }
@@ -88,12 +84,22 @@ class AddViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
         if UserDefaults.standard.object(forKey: "french") != nil{ // si la key object existe on lui donne ses valeurs
             tabMotsFr = UserDefaults.standard.object(forKey: "french") as! [String]
             tabMotsAn = UserDefaults.standard.object(forKey: "english") as! [String]
-            print("il y a deja des valeurs attribuées")
+            
         }else{ // valeurs par défaut
             tabMotsFr = ["chat🐱","chien🐶","loup🐺","ours🐻","tigre🐯","souris🐭 ","crabe🦀","grenouille🐸","abeille🐝","lapin🐰","écureuil🐿"]//mots d'origine
             tabMotsAn = ["cat🐱","dog🐶","wolf🐺","bear🐻","tiger🐯","mouse🐭","crab🦀","frog🐸","bee🐝","rabbit🐰","squirrel🐿"]//mots d'origine
-            print("il y a pas de valeurs attribuées mais on initialise avec des mots de base")
+            
+           
         }
+        
+        
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        
+        let selectedCell:UITableViewCell = tableView.cellForRow(at: indexPath)!
+        selectedCell.contentView.backgroundColor = UIColor.init(red: 37/255, green: 164/255, blue: 254/255, alpha: 1.0)
+        
         
         
     }
