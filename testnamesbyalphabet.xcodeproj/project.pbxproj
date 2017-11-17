@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E0A66441FBE61C900C1D61E /* rechercher.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E0A66431FBE61C900C1D61E /* rechercher.png */; };
+		7E0A66481FBE669200C1D61E /* RoundTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0A66471FBE669200C1D61E /* RoundTableView.swift */; };
 		7E0BB3611FB2D6B80029A896 /* Reverso-Traduction-en-Contexte.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E0BB3601FB2D6B70029A896 /* Reverso-Traduction-en-Contexte.png */; };
+		7E4EBF6A1FBE5C69009292FF /* plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E4EBF691FBE5C68009292FF /* plus.png */; };
+		7E4EBF6C1FBE5F62009292FF /* list.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E4EBF6B1FBE5F62009292FF /* list.png */; };
 		7E5B7CDE1FB6920100B41126 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5B7CDD1FB6920100B41126 /* ListViewController.swift */; };
 		7E65F2E21FB50503004599C3 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E65F2E11FB50503004599C3 /* AddViewController.swift */; };
 		7E8896E71FBCBF4D003E1EEA /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8896E61FBCBF4D003E1EEA /* UserDefaultsManager.swift */; };
@@ -19,7 +23,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7E0A66431FBE61C900C1D61E /* rechercher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rechercher.png; sourceTree = "<group>"; };
+		7E0A66471FBE669200C1D61E /* RoundTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundTableView.swift; sourceTree = "<group>"; };
 		7E0BB3601FB2D6B70029A896 /* Reverso-Traduction-en-Contexte.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Reverso-Traduction-en-Contexte.png"; sourceTree = "<group>"; };
+		7E4EBF691FBE5C68009292FF /* plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus.png; sourceTree = "<group>"; };
+		7E4EBF6B1FBE5F62009292FF /* list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = list.png; sourceTree = "<group>"; };
 		7E5B7CDD1FB6920100B41126 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		7E65F2E11FB50503004599C3 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		7E8896E61FBCBF4D003E1EEA /* UserDefaultsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
@@ -46,6 +54,9 @@
 		7E0BB35F1FB2D67E0029A896 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				7E0A66431FBE61C900C1D61E /* rechercher.png */,
+				7E4EBF6B1FBE5F62009292FF /* list.png */,
+				7E4EBF691FBE5C68009292FF /* plus.png */,
 				7E0BB3601FB2D6B70029A896 /* Reverso-Traduction-en-Contexte.png */,
 			);
 			path = images;
@@ -80,6 +91,7 @@
 				7EA889761FAA3F010055CEEC /* Assets.xcassets */,
 				7EA889781FAA3F010055CEEC /* LaunchScreen.storyboard */,
 				7EA8897B1FAA3F010055CEEC /* Info.plist */,
+				7E0A66471FBE669200C1D61E /* RoundTableView.swift */,
 			);
 			path = testnamesbyalphabet;
 			sourceTree = "<group>";
@@ -144,9 +156,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E0BB3611FB2D6B80029A896 /* Reverso-Traduction-en-Contexte.png in Resources */,
+				7E4EBF6A1FBE5C69009292FF /* plus.png in Resources */,
 				7EA8897A1FAA3F010055CEEC /* LaunchScreen.storyboard in Resources */,
+				7E0A66441FBE61C900C1D61E /* rechercher.png in Resources */,
 				7EA889771FAA3F010055CEEC /* Assets.xcassets in Resources */,
 				7EA889751FAA3F010055CEEC /* Main.storyboard in Resources */,
+				7E4EBF6C1FBE5F62009292FF /* list.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,6 +176,7 @@
 				7E8896E71FBCBF4D003E1EEA /* UserDefaultsManager.swift in Sources */,
 				7EA889701FAA3F010055CEEC /* AppDelegate.swift in Sources */,
 				7E5B7CDE1FB6920100B41126 /* ListViewController.swift in Sources */,
+				7E0A66481FBE669200C1D61E /* RoundTableView.swift in Sources */,
 				7E65F2E21FB50503004599C3 /* AddViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
