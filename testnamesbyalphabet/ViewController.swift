@@ -18,13 +18,14 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     @IBOutlet weak var resultat: UILabel!
     @IBOutlet weak var segment: UISegmentedControl!
     
+    @IBOutlet weak var traduire: UIButton!
     
     var theKey = String()
     var theValue = String()
     var listElementCorrespondants = [String]()
-    var tabMotsFr = ["chat🐱","chien🐶","loup🐺","ours🐻","tigre🐯","perroquet ","crabe🦀","loutre"]
-    var tabMotsAn = ["cat","dog","wolf","bear","tiger","parrot","crab","otter"]
-    var dictFrAn = ["chat":"cat","chien":"dog","loup":"wolf","ours":"bear","tigre":"tiger","perroquet":"parrot","canard":"duck","crabe":"crab","loutre":"otter","sanglier":"boar","serpent":"snake","vache":"cow"]
+    var tabMotsFr = ["chat🐱","chien🐶","loup🐺","ours🐻","tigre🐯","souris🐭 ","crabe🦀","grenouille🐸","abeille🐝","lapin🐰","écureuil🐿"]
+    var tabMotsAn = ["cat🐱","dog🐶","wolf🐺","bear🐻","tiger🐯","mouse🐭","crab🦀","frog🐸","bee🐝","rabbit🐰","squirrel🐿"]
+    var dictFrAn = [String:String]()
     
     override func viewDidLoad() {
         print("OKKK")
@@ -59,8 +60,8 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
             print(dictFrAn)
             
         }else{ // valeurs par défaut
-            tabMotsFr = ["chat🐱","chien🐶","loup🐺","ours🐻","tigre🐯","perroquet ","crabe🦀","loutre"]
-            tabMotsAn = ["cat","dog","wolf","bear","tiger","parrot","crab","otter"]
+            tabMotsFr = ["chat🐱","chien🐶","loup🐺","ours🐻","tigre🐯","souris🐭 ","crabe🦀","grenouille🐸","abeille🐝","lapin🐰","écureuil🐿"]//mots d'origine
+            tabMotsAn = ["cat🐱","dog🐶","wolf🐺","bear🐻","tiger🐯","mouse🐭","crab🦀","frog🐸","bee🐝","rabbit🐰","squirrel🐿"]//mots d'origine
             print("il y a pas de valeurs attribuées mais on initialise avec des mots de base")
             print(tabMotsFr)
         }
@@ -98,6 +99,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
             dictFrAn = Dictionary(uniqueKeysWithValues: zip(tabMotsFr,tabMotsAn))
             resultat.text = "Resultat"
             
+            
         case 1:
             manageUser()
             textfield.text = ""
@@ -106,6 +108,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
             tableViewHome.reloadData()
             dictFrAn = Dictionary(uniqueKeysWithValues: zip(tabMotsAn,tabMotsFr))
             resultat.text = "Resultat"
+            
         default:
             break
         }
@@ -141,8 +144,9 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
                 tableViewHome.reloadData()
             }
             else if textfield.text == "" {
-                
-                listElementCorrespondants = [String]()
+                resultat.text = "Resultat"
+                listElementCorrespondants = ["Aucun résultat "]
+               
                 tableViewHome.reloadData()
                 
                 

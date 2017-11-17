@@ -16,10 +16,9 @@ class AddViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
     @IBOutlet weak var addTableView: UITableView!
     @IBOutlet weak var texfieldFrancais: UITextField!
     @IBOutlet weak var textfieldAnglais: UITextField!
-    var tabMotsFr = ["chat","chien","loup","ours","tigre","perroquet","crabe","loutre"]
-    var tabMotsAn = ["cat","dog","wolf","bear","tiger","parrot","crab","otter"]
-    
-    var dictFrAn = ["chat":"cat","chien":"dog","loup":"wolf","ours":"bear","tigre":"tiger","perroquet":"parrot","canard":"duck","crabe":"crab","loutre":"otter","sanglier":"boar","serpent":"snake","vache":"cow"]
+    var tabMotsFr = ["chat🐱","chien🐶","loup🐺","ours🐻","tigre🐯","souris🐭 ","crabe🦀","grenouille🐸","abeille🐝","lapin🐰","écureuil🐿"]
+    var tabMotsAn = ["cat🐱","dog🐶","wolf🐺","bear🐻","tiger🐯","mouse🐭","crab🦀","frog🐸","bee🐝","rabbit🐰","squirrel🐿"]
+    var dictFrAn = [String:String]()
     var theKey = ""
     var theValue = ""
     var addlistElementCorrespondants = [String]()
@@ -91,8 +90,8 @@ class AddViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
             tabMotsAn = UserDefaults.standard.object(forKey: "english") as! [String]
             print("il y a deja des valeurs attribuées")
         }else{ // valeurs par défaut
-            tabMotsFr = ["chat","chien","loup","ours","tigre","perroquet","crabe","loutre"]
-            tabMotsAn = ["cat","dog","wolf","bear","tiger","parrot","crab","otter"]
+            tabMotsFr = ["chat🐱","chien🐶","loup🐺","ours🐻","tigre🐯","souris🐭 ","crabe🦀","grenouille🐸","abeille🐝","lapin🐰","écureuil🐿"]//mots d'origine
+            tabMotsAn = ["cat🐱","dog🐶","wolf🐺","bear🐻","tiger🐯","mouse🐭","crab🦀","frog🐸","bee🐝","rabbit🐰","squirrel🐿"]//mots d'origine
             print("il y a pas de valeurs attribuées mais on initialise avec des mots de base")
         }
         

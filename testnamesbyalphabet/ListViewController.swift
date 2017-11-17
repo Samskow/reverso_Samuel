@@ -12,8 +12,8 @@ import UIKit
 
 class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSource{
     
-    var tabMotsFr = ["chat🐱","chien🐶","loup","ours🐻","tigre🐯","perroquet ","crabe🦀","loutre"]
-    var tabMotsAn = ["cat","dog","wolf","bear","tiger","parrot","crab","otter"]
+    var tabMotsFr = ["chat🐱","chien🐶","loup🐺","ours🐻","tigre🐯","souris🐭 ","crabe🦀","grenouille🐸","abeille🐝","lapin🐰","écureuil🐿"]//mots d'origine
+    var tabMotsAn = ["cat🐱","dog🐶","wolf🐺","bear🐻","tiger🐯","mouse🐭","crab🦀","frog🐸","bee🐝","rabbit🐰","squirrel🐿"]//mots d'origine
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return(tabMotsFr.count)
@@ -64,8 +64,8 @@ class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             tabMotsAn = UserDefaults.standard.object(forKey: "english") as! [String]
             print("il y a deja des valeurs attribuées")
         }else{ // valeurs par défaut
-            tabMotsFr = ["chat🐱","chien🐶","loup🐺","ours🐻","tigre🐯","perroquet ","crabe🦀","loutre"]
-            tabMotsAn = ["cat","dog","wolf","bear","tiger","parrot","crab","otter"]
+            tabMotsFr = ["chat🐱","chien🐶","loup🐺","ours🐻","tigre🐯","souris🐭 ","crabe🦀","grenouille🐸","abeille🐝","lapin🐰","écureuil🐿"]
+            tabMotsAn = ["cat🐱","dog🐶","wolf🐺","bear🐻","tiger🐯","mouse🐭","crab🦀","frog🐸","bee🐝","rabbit🐰","squirrel🐿"]
             print("il y a pas de valeurs attribuées mais on initialise avec des mots de base")
         }
         
